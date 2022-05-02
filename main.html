@@ -1,0 +1,333 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (https://tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (https://tug.org/tex4ht/)"> 
+<!-- html --> 
+<meta name="src" content="main.tex"> 
+<link rel="stylesheet" type="text/css" href="main.css"> 
+</head><body 
+>
+<!--l. 24--><p class="noindent" >
+                                                                                                  
+                                                                                                  
+<!--l. 24--><p class="indent" >
+                                                                                                  
+                                                                                                  
+<!--l. 24--><p class="noindent" ><span 
+class="ptmr7t-x-x-240">A Software System for maintaining Attendance</span><br />
+<!--l. 24--><p class="noindent" >
+<!--l. 24--><p class="noindent" >                                                                             <span 
+class="ptmr7t-x-x-110">Rudransh Pratap Singh</span>
+                                                                                    <span 
+class="ptmb7t-">IIIT-H</span>
+                                                                             Gachibowli, Hyderabad
+                                                                            rudransh.s@research.iiit.ac.in
+<!--l. 26--><p class="noindent" ><span 
+class="ptmb7t-x-x-90">Abstract</span>
+       <span 
+class="ptmr7t-x-x-90">Recording Attendance has been a major issue, with most current systems vulnerable to proxies. The paper proposes a novel</span>
+    <span 
+class="ptmr7t-x-x-90">software  system  based  on  computer  vision  methods  such  as  face  recognition  to  detect  and  record  attendance.  The  system  is</span>
+    <span 
+class="ptmr7t-x-x-90">designed to be robust and scalable.</span>
+<a 
+ id="x1-2r1"></a>
+<!--l. 31--><p class="noindent" ><span 
+class="ptmrc7t-">I.  I<span 
+class="small-caps">n</span><span 
+class="small-caps">t</span><span 
+class="small-caps">r</span><span 
+class="small-caps">o</span><span 
+class="small-caps">d</span><span 
+class="small-caps">u</span><span 
+class="small-caps">c</span><span 
+class="small-caps">t</span><span 
+class="small-caps">i</span><span 
+class="small-caps">o</span><span 
+class="small-caps">n</span></span>
+<a 
+ id="Q1-1-0"></a>
+<!--l. 32--><p class="indent" >  The COVID - 19 pandemic has deferred the offline mode of classrooms for quite some time now, but now that everything seems to
+go back to normal, issues that were once forgotten are now coming up again. One of such issues is recording the attendance of
+students.
+<!--l. 34--><p class="indent" >  The current method of recording attendance is as follows. Students are assigned designated seats for their respective classes. A
+designated person comes up with a register, marks the empty seats, and marks the students corresponding to those seats as <span 
+class="ptmb7t-">absent</span>. This,
+however, is an extremely inefficient method, primarily because of the following reasons.
+     <ol  class="enumerate1" >
+<li 
+  class="enumerate" id="x1-4x1">
+     <!--l. 37--><p class="noindent" >The procedure is entirely manual, and hence it will take a lot of effort and time to figure out the empty seats and mark
+     the students absent. This problem is especially aggravated in the case of large classes, which span over a huge area, with
+     lots of students.
+     </li>
+<li 
+  class="enumerate" id="x1-6x2">
+     <!--l. 38--><p class="noindent" >This method is extremely vulnerable to proxies; students can ask other students, who might not have the course, to take
+     their seats. Since the registrar has no idea of what the actual person looks. They are bound to mark the person as present,
+     this is done in practice, and hence the system is vulnerable to proxies.
+     </li>
+<li 
+  class="enumerate" id="x1-8x3">
+     <!--l. 39--><p class="noindent" >The student does not need to be available throughout the class and can sneak in for attendance when the registrar comes
+     in. The registrar has no idea when the student joined or left the class.
+     </li>
+<li 
+  class="enumerate" id="x1-10x4">
+     <!--l. 40--><p class="noindent" >The system is heavily reliant on trusting the moral character of the registrar. A student can bribe the registrar to mark
+     the student as present, for the entirety of the course.</li></ol>
+<!--l. 42--><p class="noindent" >Also, we consider that the registrar is completely accurate in their work, which is not true. There might be students present in class who
+might have been accidentally marked absent by the registrar because of human error. All of these mean one thing: the current recording
+attendance system needs to change.
+<!--l. 45--><p class="indent" >  This is where we come up with a novel method to record attendance. The system is based on computer vision methods, such as face
+recognition, to detect and record attendance. The system is designed to be scalable, as well as transparent to the students themselves,
+that is in case of any errors, the student can dispute the attendance.
+<!--l. 48--><p class="indent" >
+                                                                                                  
+                                                                                                  
+<a 
+ id="x1-11r2"></a>
+<!--l. 48--><p class="noindent" ><span 
+class="ptmrc7t-">II.  L<span 
+class="small-caps">i</span><span 
+class="small-caps">t</span><span 
+class="small-caps">e</span><span 
+class="small-caps">r</span><span 
+class="small-caps">a</span><span 
+class="small-caps">t</span><span 
+class="small-caps">u</span><span 
+class="small-caps">r</span><span 
+class="small-caps">e</span> R<span 
+class="small-caps">e</span><span 
+class="small-caps">v</span><span 
+class="small-caps">i</span><span 
+class="small-caps">e</span><span 
+class="small-caps">w</span></span>
+<a 
+ id="Q1-1-0"></a>
+<!--l. 49--><p class="indent" >  A lot of research has been done on methods for recording attendance, and several methods have been proposed for the same. We
+look at a few of them in this section.
+<!--l. 50--><p class="noindent" ><span 
+class="ptmri7t-">A. RFID Authentication</span>
+<!--l. 51--><p class="indent" >  One of the more common approaches to solving the attendance problem is by means of Radio Frequency Identification (RFID) tags.
+RFID tags are a type of tag that can be placed on any object, such as an ID-card, and can be read by a reader. The reader can then read
+the tag and determine if the person is present or absent. RFID has a wide variety of applications other than just attendance. As of now,
+IIITH aims to use RFID tags for recording mess attendance. The only issue with this method is that there is no way to automatically
+verify the actual owner of the RFID tag, and as a result, one could proxy the attendance of a student by using their RFID-tagged
+cards.
+<!--l. 53--><p class="noindent" ><span 
+class="ptmri7t-">B. Biometric Authentication</span>
+<!--l. 54--><p class="indent" >  Another approach to solving this problem is through the use of biometrics, wherein one uses their fingerprints for identification and
+authentication. <br 
+class="newline" /><br 
+class="newline" />Since our approach is primarily through the means of face recognition, therefore some of the ongoing research in the field currently
+under investigation are as follows
+<!--l. 57--><p class="indent" >
+<!--l. 57--><p class="noindent" ><span 
+class="ptmri7t-">C. YOLO : You Only Look Once</span>
+<!--l. 58--><p class="indent" >  Most object detection algorithm are essentially classifiers, which assign a given data point to one of many classes.
+However YOLO instead treats this as a regression problem to spatially separated bounding boxes and associated class
+probablities.. Then when a test image is provided, it predicts the bounding boxes and class probablities for each object in the
+image.
+<!--l. 61--><p class="indent" >  One of the main advantages of YOLO is it&#8217;s speed, the base model can process images in real-time at around 45 frames per second.
+Another variant of YOLO, called the Fast-YOLO can process images at 155 frames per second, while achieving double the mAP(mean
+average precision) of other real-time object detection algorithms.
+<!--l. 63--><p class="indent" >
+<!--l. 63--><p class="noindent" ><span 
+class="ptmri7t-">D. FaceNet</span>
+<!--l. 64--><p class="indent" >  While there have been significant developments in the field of face recognition, implementing such algorithms at large scale is still a
+huge task. This brings in FaceNet, which basically learns the mapping from different face images to an Euclidean space, with metric
+distances associated between any two faces. One could then run the standard clustering/classification/regression algorithms on this
+mapped dataset, using FaceNet embeddings as feature vectors. The mapping is extremely accurate, when tested on the LFW (Labelled
+Faces in the Wild) dataset, it achieved a record breaking accuracy of 99.6%, and an accuracy of 95.12% on the YouTube Faces
+database.
+<a 
+ id="x1-12r3"></a>
+<!--l. 66--><p class="noindent" ><span 
+class="ptmrc7t-">III.  S<span 
+class="small-caps">y</span><span 
+class="small-caps">s</span><span 
+class="small-caps">t</span><span 
+class="small-caps">e</span><span 
+class="small-caps">m</span> A<span 
+class="small-caps">r</span><span 
+class="small-caps">c</span><span 
+class="small-caps">h</span><span 
+class="small-caps">i</span><span 
+class="small-caps">t</span><span 
+class="small-caps">e</span><span 
+class="small-caps">c</span><span 
+class="small-caps">t</span><span 
+class="small-caps">u</span><span 
+class="small-caps">r</span><span 
+class="small-caps">e</span></span>
+<a 
+ id="Q1-1-0"></a>
+<!--l. 67--><p class="indent" >  The system architecture is perhaps the most important part of developing any software system, since it essentially describes the way
+to tackle the aforementioned problem. This will be extremely useful for software developers during the early stages of
+the  development.  In  this  section  we  provide  the  basic  description  of  the  system,  mentioning  the  requirements,  the
+use cases, as well as providing Use Case diagrams, sequence diagrams, and class diagrams for the entire structure as
+well.
+<a 
+ id="x1-13r1"></a>
+<!--l. 70--><p class="noindent" ><span 
+class="ptmri7t-">A.  Requirements</span>
+<a 
+ id="Q1-1-0"></a>
+<!--l. 71--><p class="indent" >  In order to provide facial recognition support for classes, we must have some means to capture the faces during the class. We do this
+by means of a high-resolution camera, which is able to capture detail at a very fine level. This will be extremely important, since our
+system requires monitoring of students in the class, where the sizes of the class can be extremely large. We install two of these cameras
+per class, one of which shall be placed near the entrance, and the other shall be placed at inside the class, at a location with clear
+lighting, and little to no obstruction.
+                                                                                                  
+                                                                                                  
+<!--l. 75--><p class="indent" >  We shall also need to take care of storage. For the purposes of the system, which shall be described later, we require the
+recordings of the camera as well, atleast for a duration of one day. Therefore a separate storage server needs to be
+implemented.
+     <ol  class="enumerate1" >
+<li 
+  class="enumerate" id="x1-15x1">
+     <!--l. 77--><p class="noindent" >Functional Requirements : The user should be able to login to the application using CAS authentication; The user must
+     be able to see whether his attendance was recorded or not; the user should be able to raise a ticket in case of disputes.
+     </li>
+<li 
+  class="enumerate" id="x1-17x2">
+     <!--l. 78--><p class="noindent" >Non Functional Requirements : Reliablity, Robustness, and Scalability are the primary non functional requirements for
+     this software system. The Face recognition and identifier must be able to perform real time computations, interoperablity
+     across different computer systems as well as mobile devices, along with a modular system, and a flexible interface for
+     ease of integration</li></ol>
+<!--l. 80--><p class="noindent" >
+<a 
+ id="x1-18r2"></a>
+<!--l. 80--><p class="noindent" ><span 
+class="ptmri7t-">B.  Users</span>
+<a 
+ id="Q1-1-0"></a>
+<!--l. 81--><p class="indent" >  The system will have primarily three users :
+     <ol  class="enumerate1" >
+<li 
+  class="enumerate" id="x1-20x1">
+     <!--l. 83--><p class="noindent" >The registrar/admin, who maintains the recordings, and resolves disputes, if any.
+     </li>
+<li 
+  class="enumerate" id="x1-22x2">
+     <!--l. 84--><p class="noindent" >The  teacher,  who  also  has  access  to  attendance  records  of  the  entire  class  for  his  particular  course,  and  can  use  it  to
+     further improve the course structure.
+     </li>
+<li 
+  class="enumerate" id="x1-24x3">
+     <!--l. 85--><p class="noindent" >The student, who has access to his own attendance records, for all course assigned to them.</li></ol>
+<!--l. 87--><p class="noindent" >
+<a 
+ id="x1-25r3"></a>
+<!--l. 87--><p class="noindent" ><span 
+class="ptmri7t-">C.  Use Cases</span>
+<a 
+ id="Q1-1-0"></a>
+<!--l. 88--><p class="indent" >  The use cases for each individual user are as follows :
+     <ol  class="enumerate1" >
+<li 
+  class="enumerate" id="x1-27x1">
+     <!--l. 90--><p class="noindent" >Student :
+        <ul class="itemize1">
+        <li class="itemize">
+        <!--l. 92--><p class="noindent" >Record attendance of the student.
+        </li>
+        <li class="itemize">
+        <!--l. 93--><p class="noindent" >View attendance of the student.
+        </li>
+        <li class="itemize">
+        <!--l. 94--><p class="noindent" >Find statistics such as most and least atended classes, classes which have attendance lower than limit etc.
+        </li>
+        <li class="itemize">
+        <!--l. 95--><p class="noindent" >raise a ticket in case of any dispute over attendance of a particular course.</li></ul>
+                                                                                                  
+                                                                                                  
+     </li>
+<li 
+  class="enumerate" id="x1-29x2">
+     <!--l. 97--><p class="noindent" >Teacher :
+        <ul class="itemize1">
+        <li class="itemize">
+        <!--l. 99--><p class="noindent" >View attendance of the entire class.
+        </li>
+        <li class="itemize">
+        <!--l. 100--><p class="noindent" >View most frequently and least frequently absent students.</li></ul>
+     </li>
+<li 
+  class="enumerate" id="x1-31x3">
+     <!--l. 102--><p class="noindent" >Registrar :
+        <ul class="itemize1">
+        <li class="itemize">
+        <!--l. 104--><p class="noindent" >resolve disputes regarding students.
+        </li>
+        <li class="itemize">
+        <!--l. 105--><p class="noindent" >view recordings of class, including recordings from the cameras at the entrance and inside the class itself.</li></ul>
+     </li></ol>
+<!--l. 108--><p class="noindent" >The Primary idea is as follows : The faces of all students are already stored in a pre-existing database, one could use the images present
+on the ID cards, or create better higher definition ones instead as well. Once a student enters a class, their faces are captured and run
+against the database, and once a match is found, their attendance is recorded. This is then followed by a notification, sent as soon as
+possible to the student. While the student is inside the class, the in-class camera captures his face, and as long as he is visible to the
+camera, his attendance score ( a measure between 0 to 100) increases. The attendance score of the student is calculated as
+follows
+  <table 
+class="equation"><tr><td>
+  <div class="math-display" >
+<img 
+src="main0x.png" alt="                  total time-present
+attendance score = duratio of-class
+" class="math-display" ><a 
+ id="x1-32r1"></a></div>
+  </td><td class="equation-label">(1)</td></tr></table>
+<!--l. 113--><p class="nopar" >
+where <span 
+class="ptmri7t-">total</span><span 
+class="ptmri7t-">_time</span><span 
+class="ptmri7t-">_present  </span>is the total time spent by the student in the class, and <span 
+class="ptmri7t-">duratio</span><span 
+class="ptmri7t-">_of</span><span 
+class="ptmri7t-">_class </span>is the duration of the
+class.
+<!--l. 116--><p class="indent" >  If the student leaves the class at any point in time, the system will automatically stop incrementing his attendance score. It will also
+notify the student that he has left the class. The student will be marked as present, if his <span 
+class="ptmri7t-">attendance</span><span 
+class="ptmri7t-">_score </span>is above a certain limit of
+the class.
+<!--l. 118--><p class="indent" >  If, in case the student was in fact, present, but for some reason, was not detected by the cameras. He/she can raise a ticket to the
+admin, stating that he was present in the class. The registrar can then perform a manual inspection of the recording, checking whether
+the student at the seat was actually present. If it is indeed the case, the dispute ends with student being marked as present, otherwise he
+will be marked as absent. The ticket can only be raised by the student within 24 hours of the class, since after that the recordings will
+be purged.
+<!--l. 122--><p class="indent" >  As for the teachers, they have access to the the entire class attendance statistics, and can use information such as the
+number of people who attended the class, to perhaps gain insight into what his class might be lacking, what he needs to
+change in his course structure etc. Also information such as most and least frequently absent students, can be used by
+the teacher to take one-on-one sessions with these students, understanding why he/she might not like the course etc.
+                                                                                                  
+                                                                                                  
+<hr class="figure"><div class="figure" 
+>
+                                                                                                  
+                                                                                                  
+                                                                                                  
+                                                                                                  
+<!--l. 126--><p class="noindent" ><img 
+src="images/FacialRecogUseCase.png" alt="PIC"  
+width="256" height="213" > <a 
+ id="x1-33r1"></a>
+                                        <span 
+class="ptmr7t-x-x-80">Fig.</span><span 
+class="ptmr7t-x-x-80">&#x00A0;1.</span><span 
+class="ptmr7t-x-x-80">&#x00A0;</span><span 
+class="ptmr7t-x-x-80">&#x00A0;Use Case Diagram</span>
+                                                                                                  
+                                                                                                  
+<!--l. 129--><p class="indent" >  </div><hr class="endfigure">
+   
+</body></html> 
+
+                                                                                                  
+
+

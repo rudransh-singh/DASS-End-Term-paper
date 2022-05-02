@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2022.1.14)  2 MAY 2022 07:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2022.1.14)  2 MAY 2022 17:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -221,7 +221,14 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
 File: l3backend-pdftex.def 2021-12-14 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count280
 \l__pdf_internal_box=\box54
-) (./main.aux)
+) (./main.aux
+
+LaTeX Warning: Label `fig:my_label' multiply defined.
+
+
+LaTeX Warning: Label `fig:my_label' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
@@ -290,6 +297,31 @@ Overfull \hbox (4.07285pt too wide) in paragraph at lines 126--127
  [][] 
  []
 
+<images/sequencediagram.jpeg, id=18, 920.43875pt x 399.4925pt>
+File: images/sequencediagram.jpeg Graphic file (type jpg)
+<use images/sequencediagram.jpeg>
+Package pdftex.def Info: images/sequencediagram.jpeg  used on input line 133.
+(pdftex.def)             Requested size: 256.07785pt x 184.94525pt.
+
+Overfull \hbox (4.07785pt too wide) in paragraph at lines 133--134
+ [][] 
+ []
+
+<images/classdiagram.jpeg, id=19, 1284.8pt x 634.37pt>
+File: images/classdiagram.jpeg Graphic file (type jpg)
+<use images/classdiagram.jpeg>
+Package pdftex.def Info: images/classdiagram.jpeg  used on input line 142.
+(pdftex.def)             Requested size: 256.07324pt x 256.07631pt.
+
+Overfull \hbox (4.07324pt too wide) in paragraph at lines 142--143
+ [][] 
+ []
+
+[3 <./images/FacialRecogUseCase.png> <./images/sequencediagram.jpeg> <./images/classdiagram.jpeg>]
+Underfull \hbox (badness 1983) in paragraph at lines 161--162
+\OT1/ptm/m/n/10 tacharyya, Rahul Ran-jan, Farkhod Al-isherov, Choi
+ []
+
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -301,22 +333,26 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[3
+[4
 
- <./images/FacialRecogUseCase.png>] (./main.aux) ) 
+] (./main.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 4119 strings out of 478353
- 63725 string characters out of 5854635
- 379437 words of memory out of 5000000
- 22221 multiletter control sequences out of 15000+600000
+ 4134 strings out of 478353
+ 64133 string characters out of 5854635
+ 379476 words of memory out of 5000000
+ 22233 multiletter control sequences out of 15000+600000
  435603 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,8n,62p,455b,284s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (3 pages, 126023 bytes).
+Output written on main.pdf (4 pages, 230431 bytes).
 PDF statistics:
- 53 PDF objects out of 1000 (max. 8388607)
- 31 compressed objects within 1 object stream
+ 58 PDF objects out of 1000 (max. 8388607)
+ 33 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

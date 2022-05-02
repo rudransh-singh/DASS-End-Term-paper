@@ -327,6 +327,16 @@ INPUT ./images/FacialRecogUseCase.png
 INPUT images/FacialRecogUseCase.png
 INPUT ./images/FacialRecogUseCase.png
 INPUT ./images/FacialRecogUseCase.png
+INPUT ./images/sequencediagram.jpeg
+INPUT ./images/sequencediagram.jpeg
+INPUT images/sequencediagram.jpeg
+INPUT ./images/sequencediagram.jpeg
+INPUT ./images/sequencediagram.jpeg
+INPUT ./images/classdiagram.jpeg
+INPUT ./images/classdiagram.jpeg
+INPUT images/classdiagram.jpeg
+INPUT ./images/classdiagram.jpeg
+INPUT ./images/classdiagram.jpeg
 INPUT /usr/share/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT main.aux
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc
